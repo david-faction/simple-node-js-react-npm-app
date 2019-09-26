@@ -26,6 +26,8 @@ pipeline {
 
 					sh "rm $filename"
 					writeYaml file: filename, data: data
+
+					sh 'cat test.yaml'
 				}
 			}
 		}
