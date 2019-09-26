@@ -16,15 +16,17 @@ pipeline {
 		}
 		stage('Update Yaml') {
 			steps {
-				def filename = 'test.yaml'
-				def data = readYaml file: filename
-				def newPropertyValue = 'updated value'
+				script {
+					def filename = 'test.yaml'
+					def data = readYaml file: filename
+					def newPropertyValue = 'updated value'
 
-				// Update hash
-				data.versions.testProperty = newPropertyValue
+					// Update hash
+					data.versions.testProperty = newPropertyValue
 
-				sh 'rm $filename'
-				writeYaml file: filename, data: data
+					sh 'rm $filename'
+					writeYaml file: filename, data: data
+				}
 			}
 		}
 		stage('Test') {
