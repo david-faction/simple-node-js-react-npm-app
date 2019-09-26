@@ -24,6 +24,8 @@ pipeline {
 					// Update hash
 					data.versions.testProperty = newPropertyValue
 
+					echo data.versions.properties.keySet()
+
 					sh "rm $filename"
 					writeYaml file: filename, data: data
 
