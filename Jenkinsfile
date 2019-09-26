@@ -28,6 +28,8 @@ pipeline {
 					writeYaml file: filename, data: data
 
 					sh 'cat test.yaml'
+
+					sh 'git status'
 				}
 			}
 		}
