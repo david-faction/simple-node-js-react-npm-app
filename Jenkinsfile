@@ -24,7 +24,7 @@ pipeline {
 					// Update hash
 					data.versions.testProperty = newPropertyValue
 
-					sh 'rm $filename'
+					sh "rm $filename"
 					writeYaml file: filename, data: data
 				}
 			}
