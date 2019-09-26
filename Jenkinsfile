@@ -14,6 +14,19 @@ pipeline {
 				sh 'npm install'
 			}
 		}
+		stage('Update Yaml') {
+			steps {
+				def filename = 'test.yaml'
+				def data = readYaml file: filename
+				def newPropertyValue = 'updated value'
+
+				// Update hash
+				data.versions.testProperty = newPropertyValue
+
+				sh 'rm $filename'
+				writeYaml file: filename, data: data
+			}
+		}
 		stage('Test') {
 			steps {
 				sh './jenkins/scripts/test.sh'

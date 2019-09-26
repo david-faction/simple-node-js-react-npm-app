@@ -1,0 +1,22 @@
+ingress:
+  api: devapi-ng.factioninc.com
+  portal: devportal-ng.factioninc.com
+  secret: factioninc-ssl
+  secretInternal: star-dev-factioninc-ssl-secret
+  suffix: k8s.factioninc.com
+
+pgsql:
+  host: dev-stolon-proxy.dev-datastores.svc.cluster.local
+  user: dev
+services:
+  etcd: http://etcd.dev-datastores.svc.cluster.local:2379
+
+sesSourceEmail: factioninctest@gmail.com
+
+versions:
+  portal: dev-ng-1
+  testProperty: original value
+  app-proxy-snow: f1351c574d332c282f83f031402e134806fb8f71
+  app-ccv: 887b7c044eacb1ea3dfd620fa15c4e25c2d0a446
+  app-vm-converter: 63476afb2222f64ff251f42353de9e71f5f84266
+  mod-unity: logging
