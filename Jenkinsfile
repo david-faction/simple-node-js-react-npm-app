@@ -22,9 +22,7 @@ pipeline {
 					def newPropertyValue = 'updated value'
 
 					// Update hash
-					data.versions.testProperty = newPropertyValue
-
-					echo data.versions.properties.keySet()
+					data.versions['app-ccv'] = newPropertyValue
 
 					sh "rm $filename"
 					writeYaml file: filename, data: data
